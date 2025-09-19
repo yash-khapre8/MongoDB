@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Fraud Pattern Analysis • Payment Security</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/styles.css" />
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Fraud Pattern Analysis Dashboard</h1>
+		<div>
+			<a class="btn" href="/">← Dashboard</a>
+			<a class="btn" href="/survey.html">Survey</a>
+		</div>
+	</header>
+	<main class="page">
+		<div class="grid">
+			<div class="card">
+				<h2>Risk Score Distribution</h2>
+				<canvas id="riskChart" height="200"></canvas>
+			</div>
+			<div class="card">
+				<h2>Fraud Patterns by Type</h2>
+				<canvas id="patternChart" height="200"></canvas>
+			</div>
+			<div class="card">
+				<h2>High-Risk Transactions (Last 24h)</h2>
+				<div id="highRiskTxns" class="log"></div>
+			</div>
+			<div class="card">
+				<h2>Fraud Trends Over Time</h2>
+				<canvas id="trendChart" height="200"></canvas>
+			</div>
+			<div class="card">
+				<h2>Cross-User Device Analysis</h2>
+				<div id="crossUserAnalysis" class="log"></div>
+			</div>
+			<div class="card">
+				<h2>Geographic Anomalies</h2>
+				<div id="geoAnomalies" class="log"></div>
+			</div>
+		</div>
+	</main>
+	<script src="/fraud-analysis.js"></script>
+</body>
+</html>

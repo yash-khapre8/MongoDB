@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Full Survey • Payment Security</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+	<header>
+		<h1>Payment Security Survey</h1>
+		<a class="btn" href="/">← Back to Dashboard</a>
+	</header>
+	<main class="page">
+		<form id="full-survey" class="ui-form">
+			<div class="two-col">
+				<div class="section">
+					<h3>Demographics</h3>
+					<div class="field">
+						<label>Age Group</label>
+						<select name="age_group" required>
+							<option value="18-24">18-24</option>
+							<option value="25-34">25-34</option>
+							<option value="35-44">35-44</option>
+							<option value="45-54">45-54</option>
+							<option value="55+">55+</option>
+						</select>
+						<div class="helper">We only use this for aggregate insights.</div>
+					</div>
+					<div class="field">
+						<label>Usage Frequency</label>
+						<select name="usage_frequency" required>
+							<option value="daily">Daily</option>
+							<option value="weekly">Weekly</option>
+							<option value="monthly">Monthly</option>
+						</select>
+					</div>
+				</div>
+				<div class="section">
+					<h3>Payment Methods</h3>
+					<div class="chips">
+						<label class="chip"><input type="checkbox" name="payment_methods" value="UPI"> UPI</label>
+						<label class="chip"><input type="checkbox" name="payment_methods" value="CARD"> Card</label>
+						<label class="chip"><input type="checkbox" name="payment_methods" value="WALLET"> Wallet</label>
+						<label class="chip"><input type="checkbox" name="payment_methods" value="NET_BANKING"> Net Banking</label>
+					</div>
+					<div class="helper">Select all that you use regularly.</div>
+				</div>
+				<div class="section">
+					<h3>Security Fears</h3>
+					<div class="chips">
+						<label class="chip"><input type="checkbox" name="security_fears" value="phishing"> Phishing</label>
+						<label class="chip"><input type="checkbox" name="security_fears" value="identity_theft"> Identity Theft</label>
+						<label class="chip"><input type="checkbox" name="security_fears" value="upi_fraud"> UPI Fraud</label>
+						<label class="chip"><input type="checkbox" name="security_fears" value="chargebacks"> Chargebacks</label>
+					</div>
+				</div>
+				<div class="section">
+					<h3>Security Practices</h3>
+					<div class="chips">
+						<label class="chip"><input type="checkbox" name="security_practices" value="otp"> OTP</label>
+						<label class="chip"><input type="checkbox" name="security_practices" value="biometrics"> Biometrics</label>
+						<label class="chip"><input type="checkbox" name="security_practices" value="transaction_checks"> Transaction Checks</label>
+					</div>
+				</div>
+				<div class="section">
+					<h3>Past Fraud Experience</h3>
+					<div class="field">
+						<label class="toggle"><input type="checkbox" id="had_fraud_toggle"> I have experienced fraud before</label>
+					</div>
+					<div id="fraud_details" style="display:none">
+						<div class="field">
+							<label>Details (optional)</label>
+							<input type="text" name="fraud_details" placeholder="Briefly describe what happened" />
+							<div class="helper">Do not include personal data.</div>
+						</div>
+						<div class="field">
+							<label class="toggle"><input type="checkbox" id="had_chargeback"> I filed a chargeback</label>
+						</div>
+					</div>
+				</div>
+				<div class="section">
+					<h3>Security Expectations</h3>
+					<div class="chips">
+						<label class="chip"><input type="checkbox" name="security_expectations" value="alerts"> Alerts</label>
+						<label class="chip"><input type="checkbox" name="security_expectations" value="insurance"> Insurance</label>
+						<label class="chip"><input type="checkbox" name="security_expectations" value="ai_fraud_detection"> AI Fraud Detection</label>
+					</div>
+				</div>
+			</div>
+			<div class="actions" style="margin-top:16px;">
+				<button type="submit" class="btn primary">Submit Survey</button>
+				<a class="btn" href="/">Cancel</a>
+			</div>
+			<div id="full-status" class="muted" style="margin-top:8px;"></div>
+		</form>
+	</main>
+	<script src="/survey.js"></script>
+</body>
+</html> 

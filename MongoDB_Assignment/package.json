@@ -1,0 +1,20 @@
+{
+  "name": "payment-security-fraud-demo",
+  "version": "1.0.0",
+  "description": "Survey + Real-time transaction logging + anomaly detection with MongoDB change streams",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "NODE_ENV=production node src/server.js",
+    "seed": "node src/transactionSimulator.js",
+    "seed:users": "node src/seedUsers.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "nanoid": "^5.0.7",
+    "cors": "^2.8.5"
+  }
+} 

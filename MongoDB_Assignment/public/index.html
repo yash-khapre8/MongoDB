@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Payment Security & Fraud Monitor</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/styles.css" />
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Payment Security Survey & Fraud Dashboard</h1>
+		<a class="btn primary" href="/survey.html">Open Survey</a><a class="btn" href="/fraud-analysis.html">Fraud Analysis</a>
+	</header>
+	<main>
+		<section class="grid">
+			<div class="card">
+				<h2>Quick Survey</h2>
+				<p class="muted">Short version. For full survey, click <a href="/survey.html">Open Survey</a>.</p>
+				<form id="survey-form" class="ui-form compact">
+					<div class="field">
+						<label>Age Group</label>
+						<select name="age_group" required>
+							<option value="18-24">18-24</option>
+							<option value="25-34">25-34</option>
+							<option value="35-44">35-44</option>
+							<option value="45-54">45-54</option>
+							<option value="55+">55+</option>
+						</select>
+					</div>
+					<div class="field">
+						<label>Usage Frequency</label>
+						<select name="usage_frequency" required>
+							<option value="daily">Daily</option>
+							<option value="weekly">Weekly</option>
+							<option value="monthly">Monthly</option>
+						</select>
+					</div>
+					<div class="field">
+						<label>Payment Methods</label>
+						<div class="chips">
+							<label class="chip"><input type="checkbox" name="payment_methods" value="UPI" /> UPI</label>
+							<label class="chip"><input type="checkbox" name="payment_methods" value="CARD" /> Card</label>
+							<label class="chip"><input type="checkbox" name="payment_methods" value="WALLET" /> Wallet</label>
+							<label class="chip"><input type="checkbox" name="payment_methods" value="NET_BANKING" /> Net Banking</label>
+						</div>
+					</div>
+					<div class="field">
+						<label>Security Fears</label>
+						<div class="chips">
+							<label class="chip"><input type="checkbox" name="security_fears" value="phishing" /> Phishing</label>
+							<label class="chip"><input type="checkbox" name="security_fears" value="identity_theft" /> Identity Theft</label>
+							<label class="chip"><input type="checkbox" name="security_fears" value="upi_fraud" /> UPI Fraud</label>
+							<label class="chip"><input type="checkbox" name="security_fears" value="chargebacks" /> Chargebacks</label>
+						</div>
+					</div>
+					<div class="actions">
+						<button type="submit" class="btn">Submit</button>
+						<a class="btn ghost" href="/survey.html">Open full survey</a>
+					</div>
+				</form>
+				<div id="submit-status"></div>
+			</div>
+			<div class="card">
+				<h2>Survey Insights</h2>
+				<canvas id="fearsChart" height="160"></canvas>
+				<canvas id="methodsChart" height="160" style="margin-top:16px;"></canvas>
+			</div>
+			<div class="card">
+				<div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+					<h2>Live Anomaly Logs</h2>
+					<div class="actions">
+						<button id="toggle-sse" class="btn">Pause</button>
+						<button id="delete-logs" class="btn ghost">Delete Logs</button>
+					</div>
+				</div>
+				<div id="anomalies" class="log"></div>
+			</div>
+		</section>
+	</main>
+	<script src="/main.js"></script>
+</body>
+</html> 
